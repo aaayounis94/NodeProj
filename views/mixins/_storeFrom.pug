@@ -1,0 +1,16 @@
+mixin storeForm(store = {})
+    p it works #{store.name}
+    // action is telling the browser where to send the data 
+    // method is telling the data how to send the data  
+    form(action="/add" method ="POST" class ="card")
+        label(for="name") Name
+        input(type="text" name="name")
+        label(for="description") Description
+        input(type="text" name="description")
+        - const choices = ['wifi', 'opens late', 'family friendly', 'pet friendly'. 'hidden gem', 'vegeterian']
+        ul.tags
+            each choice in choices 
+                .tag.tag__choice
+                    input(type="checkbox" id=choice value=choice name="tags")
+                    label(for="choice") #{choice
+        input(type="submit" value="save ->" class="button")
